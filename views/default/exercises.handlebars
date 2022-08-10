@@ -1,0 +1,260 @@
+
+
+<section id="blur-effect">
+    <div id="resources-header">
+        <h1 class="resources-title">EXERCISES</h1>
+        <div class="tab-container">
+            <ul class="resource-tab">
+                <li class="tab activeTab" data-tab-target="#exercises">Exercises</li>
+                <li class="tab" data-tab-target="#sessions">Sessions</li>
+            </ul>
+        </div>
+    </div>
+
+   {{#if user}}
+
+<div onclick="openFilter()" id="sort-btn" for="filter"><i class="fa-solid fa-sliders"></i></div>
+<div id="filter-input-wrapper" class="filter">
+    <div class="form-check">
+        <input type="checkbox" name="filter" value="Attacking" class="form-check-input">
+        <label class="form-check-label" for="filter">Attacking</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" name="filter" value="Defending" class="form-check-input">
+        <label class="form-check-label" for="filter">Defending</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" name="filter" value="Transition" class="form-check-input">
+        <label class="form-check-label" for="filter">Transition</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" name="filter" value="Transition Defense-to-Attack" class="form-check-input">
+        <label class="form-check-label" for="filter">Transition-Defense to Attack</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" name="filter" value="Transition Attack-to-Defense" class="form-check-input">
+        <label class="form-check-label" for="filter">Transition-Attack to Defense</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" name="filter" value="Warm-Up / Technical" class="form-check-input">
+        <label class="form-check-label" for="filter">Warm-Up/Technical</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" name="filter" value="Rondo" class="form-check-input">
+        <label class="form-check-label" for="filter">Rondo</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" name="filter" value="Tactical" class="form-check-input">
+        <label class="form-check-label" for="filter">Tactical</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" name="filter" value="Set Pieces" class="form-check-input">
+        <label class="form-check-label" for="filter">Set Pieces</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" name="filter" value="Finishing" class="form-check-input">
+        <label class="form-check-label" for="filter">Finishing</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" name="filter" value="Possession" class="form-check-input">
+        <label class="form-check-label" for="filter">Possession</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" name="filter" value="Fitness" class="form-check-input">
+        <label class="form-check-label" for="filter">Fitness</label>
+    </div>
+
+    <div class="form-check">
+        <input type="checkbox" name="filter" value="Defense Third" class="form-check-input">
+        <label class="form-check-label" for="filter">Defensive Third</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" name="filter" value="Middle Third" class="form-check-input">
+        <label class="form-check-label" for="filter">Middle Third</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" name="filter" value="Attacking Third" class="form-check-input">
+        <label class="form-check-label" for="filter">Attacking Third</label>
+    </div>
+  <button  id="addFilter">Add Filters</button>
+  <button id="removeFilter">Remove Filters</button>
+</div>
+
+<section id="exercises" class="content activeTab" data-tab-content>
+<input id="searchbar" onkeyup="searchPlays()" type="text" name="search" placeholder="Search drills..">
+
+
+{{#each posts}}
+  {{#if (equal category "62df83b691868b598404aaeb")}}
+
+    <div class="drills card-body" data-filter="{{filter}}">
+      <div class="card mb-4">
+        <a class="linkwrap" href="{{file}}" target="_blank">
+          <div class="blocker"></div>
+          <iframe src="{{file}}" title="{{title}}"></iframe></a>
+        <div>
+          <h3 class="card-title">{{title}}</h3>
+
+          {{#each filter}}
+            <p class="filters-tag {{this}}" style="display: inline-block; padding: 0 2px; background: navy; color: white">{{this}}</p>
+          {{/each}}
+
+        </div>
+      </div>
+    </div>
+
+  {{/if}}
+{{/each}}
+
+</section>
+
+<section id="sessions" class="content" data-tab-content>
+  <input class="drill-input" id="searchbar" onkeyup="searchPlays()" type="text" name="search" placeholder="Search sessions..">
+
+    {{#each posts}}
+      {{#if (equal category "62df83c091868b598404aaed")}}
+
+          <div class="drills">
+            <div class="card mb-4">
+              <img class="card-img-top exercise-img" src="{{file}}" alt="Card image cap">
+              <div class="visually-hidden closeEnlarge">CLOSE</div>
+              <div class="card-body">
+                  <h3 class="card-title">{{title}}</h3>
+                  <p class="card-text">{{description}}</p>
+              </div>
+            </div>
+          </div>
+
+      {{/if}}
+    {{/each}}
+
+</section>
+
+    {{else}}
+
+
+<section class="protectedView">
+
+<section id="exercises" class="content activeTab" data-tab-content>
+  <input style="background-color: lightgrey;" id="searchbar-disable" class="searchbar-disable" disabled="true" type="text" name="search" placeholder="Search Exercises..">
+    <h2 class="protect-blurb">Placeholder info Exercises</h2>
+      <div class="example-img-container">
+        <img src="./uploads/exercise-example1.png" class="exampleImg appearImg1" alt="example image"/>
+        <img src="./uploads/exercise-example2.png" class="exampleImg appearImg2" alt="example image"/>
+        <img src="./uploads/exercise-example3.png" class="exampleImg appearImg3" alt="example image"/>
+      </div>
+      <div class="login-btn-container">
+        <a href="/login" class="protect-btn">Login to View More</a>
+      </div>
+</section>
+
+<section id="sessions" class="content" data-tab-content>
+  <input style="background-color: lightgrey;" id="searchbar-disable" class="searchbar-disable" disabled="true" type="text" name="search" placeholder="Search Sessions..">
+   <h2 class="protect-blurb">Placeholder info Sessions</h2>
+      <div class="example-img-container">
+        <img src="" class="exampleImg appearImg1" alt="example image"/>
+        <img src="" class="exampleImg appearImg2" alt="example image"/>
+        <img src="" class="exampleImg appearImg3" alt="example image"/>
+        <img src="" class="exampleImg appearImg4" alt="example image"/>
+      </div>
+      <div class="login-btn-container">
+        <a href="/login" class="protect-btn">Login to View More</a>
+      </div>
+</section>
+</section>
+</section>
+
+    {{/if}}
+
+<script>
+// Adding jQuery
+
+const head = document.getElementsByTagName('head')[0];
+const script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = "https://code.jquery.com/jquery-2.2.1.min.js";
+
+script.onreadystatechange = handler;
+script.onload = handler;
+
+head.appendChild(script);
+
+function handler(){
+   console.log('jquery added :)');
+}
+
+//tab styling
+
+const tabs = document.querySelectorAll('[data-tab-target]')
+const tabContent = document.querySelectorAll('[data-tab-content]')
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = document.querySelector(tab.dataset.tabTarget)
+    tabContent.forEach(tabContent => {
+      tabContent.classList.remove('activeTab')
+    })
+
+    tabs.forEach(tab => {
+        tab.classList.remove('activeTab')
+      })
+
+    tab.classList.add('activeTab')
+    target.classList.add('activeTab')
+  })
+})
+
+//exercise search bar function
+
+function searchPlays() {
+    let input = document.getElementById('searchbar').value
+    input = input.toLowerCase();
+    let x = document.getElementsByClassName('drills')
+
+    for (let i = 0; i < x.length; i++) {
+        let tag = x[i].getAttribute('data-filter')
+        if (!tag.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        }
+        else {
+            x[i].style.display="block";                 
+        } 
+    }
+}
+
+//filter box
+
+function openFilter() {
+  document.getElementById('filter-input-wrapper').style.display = 'block'
+}
+
+
+let addFilter = document.getElementById('addFilter')
+
+addFilter.addEventListener('click', (e) => {
+let x = document.getElementsByClassName('drills')
+let checkboxes = document.querySelectorAll('input[name="filter"]:checked')
+let values = []
+    checkboxes.forEach((checkbox) => {
+        values.push(checkbox.value);
+    })
+  for (let element of x) {
+    const filter = element.getAttribute('data-filter');
+    element.style.display = values.includes(filter)? 'block' : 'none'
+  }
+
+document.getElementById('filter-input-wrapper').style.display = 'none'
+})
+
+
+let removeFilter = document.getElementById('removeFilter')
+
+removeFilter.addEventListener('click', (e) => {
+  let x = document.getElementsByClassName('drills')
+    for (let element of x) {
+      element.style.display = 'block'
+    }
+  document.getElementById('filter-input-wrapper').style.display = 'none'
+})
+
+</script>

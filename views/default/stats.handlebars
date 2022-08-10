@@ -1,0 +1,47 @@
+<section id="blur-effect">
+    <div id="resources-header">
+        <h1 class="resources-title">STATISTICAL DATA</h1>
+    </div>
+
+{{#if user}}
+
+{{#each posts}}
+  {{#if (equal category "62df83c791868b598404aaef")}}
+
+    <div class="drills card-body" data-filter="{{filter}}">
+      <div class="card mb-4">
+        <a class="linkwrap" href="{{file}}" target="_blank">
+          <div class="blocker"></div>
+          <iframe src="{{file}}" title="{{title}}"></iframe></a>
+        <div>
+          <h3 class="card-title">{{title}}</h3>
+        </div>
+      </div>
+    </div>
+
+  {{/if}}
+{{/each}}
+
+</section>
+
+{{else}}
+
+<section class="protectedView">
+
+<section id="exercises" class="content activeTab" data-tab-content>
+    <h2 class="protect-blurb">Placeholder info Stat Data</h2>
+        <div class="example-img-container">
+            <img src="./uploads/stats-example1.png" class="exampleImg appearImg1" alt="example image"/>
+            <img src="./uploads/stats-example2.png" class="exampleImg appearImg2" alt="example image"/>
+            <img src="./uploads/stats-example3.png" class="exampleImg appearImg3" alt="example image"/>
+            <img src="./uploads/stats-example4.png" class="exampleImg appearImg4" alt="example image"/>
+        </div>
+        <div class="login-btn-container">
+            <a href="/login" class="protect-btn">Login to View More</a>
+        </div>
+</section>
+
+</section>
+</section>
+
+    {{/if}}

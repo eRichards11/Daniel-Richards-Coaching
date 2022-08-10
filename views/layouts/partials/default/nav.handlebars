@@ -1,0 +1,31 @@
+      {{#if user}}
+
+<div id="myNav" class="Nav">
+  <a href="/"><img src="./uploads/logo.png" id="logo"></a>
+  <div class="link-container">
+    <a href="/bio" class="navLink">Bio</a>
+    <a href="/resources" class="navLink">Resources</a>
+    <a href="/exercises" class="navLink">Exercises</a>
+    <a href="/contact" class="navLink">Contact</a>
+    <a href="/stats" class="navLink">Statistical Data</a>
+    {{#if (equal user._id '62e2cf79cf3ea96185dc9bb4')}}
+    <a class="log-in-button" href="/admin">Admin</a>
+    {{/if}}
+  </div>
+</div>
+
+      {{else}}
+
+<div id="myNav" class="Nav">
+  <a class="logo" href="/"><img src="./uploads/logo.png" id="logo"></a>
+  <div class="link-container">
+    <a href="/bio" class="navLink">Bio</a>
+    <a href="/resources" class="navLink">Resources</a>
+    <a href="/exercises" class="navLink">Exercises</a>
+    <a href="/contact" class="navLink">Contact</a>
+    <a href="/stats" class="navLink">Statistical Data</a>
+    <a class="log-in-btn" href="/login">Sign In</a>
+  </div>
+</div>
+
+      {{/if}}

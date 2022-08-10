@@ -1,0 +1,33 @@
+{{#if (equal user._id '62e2cf79cf3ea96185dc9bb4')}}
+
+{{>admin/adminHeader}}
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+{{>admin/adminTopNav}}
+  <div class="content-wrapper">
+
+    {{> admin/messages}}
+
+      {{{ body }}}
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+
+{{>admin/adminFooter}}
+</body>
+
+</html>
+
+{{else}}
+<style>
+  .access {
+    text-align: center;
+    color: navy;
+    margin: 2em auto;
+    display: flex;
+    justify-content: center;
+  }
+</style>
+<h1 class="access">You do not have proper access</h1>
+<a class="access" href="/">Return Home</a>
+
+{{/if}}

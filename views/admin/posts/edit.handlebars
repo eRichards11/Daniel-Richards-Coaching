@@ -1,0 +1,123 @@
+{{#if (equal user._id '62e2cf79cf3ea96185dc9bb4')}}
+
+
+<div class="container">
+    <h1>Edit Post</h1>
+    <p>{{post.title}}</p>
+
+<div class="row p-4">
+    <div class="col-md-10">
+        <form action="/admin/posts/edit/{{post._id}}?newMethod=PUT" method="post">
+
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" id="title" value="{{post.title}}">
+        </div>
+
+        <div class="form-group">
+            <label for="file">File Upload</label>
+            <input type="file" class="form-control" id="file" name="uploadedFile"  accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,
+text/plain, application/pdf, image/*, video/mp4,video/x-m4v,video/*">
+
+            <p>Select Format</p>
+            <select id="format" name="format">
+                <option value="video">Video</option>
+                <option value="image">Image</option>
+                <option value="pdf">PDF</option>
+            </select>
+        </div>
+
+        <div for="filter">Filter</div>
+            <div class="form-check">
+                <input type="checkbox" name="filter" value="attacking" class="form-check-input">
+                <label class="form-check-label" for="filter">Attacking</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="filter" value="defending" class="form-check-input">
+                <label class="form-check-label" for="filter">Defending</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="filter" value="transition" class="form-check-input">
+                <label class="form-check-label" for="filter">Transition</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="filter" value="transition-defense-to-attack" class="form-check-input">
+                <label class="form-check-label" for="filter">Transition-Defense to Attack</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="filter" value="transition-attack-to-defense" class="form-check-input">
+                <label class="form-check-label" for="filter">Transition-Attack to Defense</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="filter" value="warm-up-or-technical" class="form-check-input">
+                <label class="form-check-label" for="filter">Warm-Up/Technical</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="filter" value="rondo" class="form-check-input">
+                <label class="form-check-label" for="filter">Rondo</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="filter" value="tactical" class="form-check-input">
+                <label class="form-check-label" for="filter">Tactical</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="filter" value="set-pieces" class="form-check-input">
+                <label class="form-check-label" for="filter">Set Pieces</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="filter" value="finishing" class="form-check-input">
+                <label class="form-check-label" for="filter">Finishing</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="filter" value="possession" class="form-check-input">
+                <label class="form-check-label" for="filter">Possession</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="filter" value="fitness" class="form-check-input">
+                <label class="form-check-label" for="filter">Fitness</label>
+            </div>
+
+            <div class="form-check">
+                <input type="checkbox" name="filter" value="defense-third" class="form-check-input">
+                <label class="form-check-label" for="filter">Defensive Third</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="filter" value="middle-third" class="form-check-input">
+                <label class="form-check-label" for="filter">Middle Third</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="filter" value="attacking-third" class="form-check-input">
+                <label class="form-check-label" for="filter">Attacking Third</label>
+            </div>
+
+        <div class="form-group">
+            <label for="url">URL</label>
+            <input type="url" class="form-control" name="url" value="{{post.url}}" id="url" placeholder="enter link">
+        </div>
+
+
+
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select name="category" id="category" class="form-control">
+                {{#select post.category}}
+                    {{#each categories}}
+                        <option value="{{_id}}">{{title}}</option>
+                    {{/each}}
+                {{/select}}
+            </select>
+           </div>
+
+           <div class="form-group">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" class="form-control" placeholder="enter description here" rows="10">{{post.description}}</textarea>
+           </div>
+
+           <button type="submit" class="btn btn-outline-success btn-lg">Update Post</button>
+
+        </form>
+    </div>
+</div>
+</div>
+
+{{/if}}

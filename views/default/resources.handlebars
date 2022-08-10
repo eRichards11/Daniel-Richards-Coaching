@@ -1,0 +1,332 @@
+{{#if user}}
+
+    <section id="blur-effect">
+        <div id="resources-header">
+            <h1 class="resources-title">RESOURCES</h1>
+            <div class="tab-container">
+                <ul class="resource-tab">
+                <li class="tab activeTab" data-tab-target="#advice-videos">ADVICE VIDEOS</li>
+                <li class="tab" data-tab-target="#college-placement">COLLEGE PLACEMENTS TIPS</li>
+                <li class="tab" data-tab-target="#health-and-wellness">HEALTH AND WELLNESS</li>
+                <li class="tab" data-tab-target="#tactical-development">TACTICAL DEVELOPMENT / <br>VISUAL LEARNING TOOLS</li>
+                </ul>
+            </div>
+        </div>
+    <div>
+        <div id="advice-videos" class="content activeTab" data-tab-content>
+
+        {{#each posts}}
+        {{#if (equal category "62df837e91868b598404aae3")}}
+
+          <div class="drills">
+            <div class="card mb-4">
+                {{#if url}}
+                <a href="{{url}}" target="_blank" class="url">
+                  <img class="card-img-top" src="{{file}}" alt="Card image cap">
+                </a>
+                <div class="card-body">
+                    <h3 class="card-title">{{title}}</h3>
+                    <p class="card-text">{{description}}</p>
+                </div>  
+                {{else}}
+                  {{#if (equal format 'video')}}
+                    <video width="250" height="250" controls="controls" type="video/mp4" preload="auto" playsinline>
+                      <source src="{{file}}" autostart="false">
+                      Your browser does not support the video tag.
+                    </video>
+                    {{/if}}
+                    {{#if (equal format 'pdf')}}
+                    <a class="linkwrap" href="{{file}}" target="_blank">
+                      <div class="blocker"></div>
+                      <iframe src="{{file}}" title="{{title}}"></iframe></a>
+                    {{/if}}
+                    {{#if (equal format 'image')}}
+                    <img class="resourceImg" src="{{file}}" alt="Card image cap">
+                    <div class="visually-hidden closeEnlarge">CLOSE</div>
+                    {{/if}}
+                <div class="card-body">
+                    <h3 class="card-title">{{title}}</h3>
+                    <p class="card-text">{{description}}</p>
+                </div>    
+                {{/if}}
+
+            </div>
+          </div>
+        {{/if}}
+        {{/each}}
+
+
+        </div>
+
+        <div id="college-placement" class="content" data-tab-content>
+
+           {{#each posts}}
+        {{#if (equal category "62df838791868b598404aae5")}}
+
+          <div class="drills">
+            <div class="card mb-4">
+                {{#if url}}
+                <a href="{{url}}" target="_blank" class="url">
+                  <img class="card-img-top" src="{{file}}" alt="Card image cap">
+                </a>
+                <div class="card-body">
+                    <h3 class="card-title">{{title}}</h3>
+                    <p class="card-text">{{description}}</p>
+                </div>
+                {{else}}
+                  {{#if (equal format 'video')}}
+                    <video width="250" height="250" controls="controls" type="video/mp4" preload="auto" playsinline>
+                      <source src="{{file}}" autostart="false">
+                      Your browser does not support the video tag.
+                    </video>
+                    {{/if}}
+                    {{#if (equal format 'pdf')}}
+                    <a class="linkwrap" href="{{file}}" target="_blank">
+                      <div class="blocker"></div>
+                      <iframe src="{{file}}" title="{{title}}"></iframe></a>
+                    {{/if}}
+                    {{#if (equal format 'image')}}
+                    <img class="resourceImg" src="{{file}}" alt="Card image cap">
+                    {{/if}}
+                <div class="visually-hidden closeEnlarge">CLOSE</div>
+                <div class="card-body">
+                    <h3 class="card-title">{{title}}</h3>
+                    <p class="card-text">{{description}}</p>
+                </div>
+                {{/if}}
+
+            </div>
+          </div>
+        {{/if}}
+        {{/each}}
+
+        </div>
+
+        <div id="health-and-wellness" class="content" data-tab-content>
+
+           {{#each posts}}
+        {{#if (equal category "62df839491868b598404aae7")}}
+
+          <div class="drills">
+            <div class="card mb-4">
+                {{#if url}}
+                <a href="{{url}}" target="_blank" class="url">
+                  <img class="card-img-top" src="{{file}}" alt="Card image cap">
+                </a>
+                <div class="card-body">
+                    <h3 class="card-title">{{title}}</h3>
+                    <p class="card-text">{{description}}</p>
+                </div>
+                {{else}}
+                  {{#if (equal format 'video')}}
+                    <video width="250" height="250" controls="controls" type="video/mp4" preload="auto" playsinline>
+                      <source src="{{file}}" autostart="false">
+                      Your browser does not support the video tag.
+                    </video>
+                    {{/if}}
+                    {{#if (equal format 'pdf')}}
+                    <a class="linkwrap" href="{{file}}" target="_blank">
+                      <div class="blocker"></div>
+                      <iframe src="{{file}}" title="{{title}}"></iframe></a>
+                    {{/if}}
+                    {{#if (equal format 'image')}}
+                    <img class="resourceImg" src="{{file}}" alt="Card image cap">
+                    {{/if}}
+                <div class="visually-hidden closeEnlarge">CLOSE</div>
+                <div class="card-body">
+                    <h3 class="card-title">{{title}}</h3>
+                    <p class="card-text">{{description}}</p>
+                </div>
+                {{/if}}
+
+            </div>
+          </div>
+        {{/if}}
+        {{/each}}
+
+        </div>
+
+        <div id="tactical-development" class="content" data-tab-content>
+
+           {{#each posts}}
+        {{#if (equal category "62df83a091868b598404aae9")}}
+
+          <div class="drills">
+            <div class="card mb-4">
+                {{#if url}}
+                <a href="{{url}}" target="_blank" class="url">
+                  <img class="card-img-top" src="{{file}}" alt="Card image cap">
+                </a>
+                <div class="card-body">
+                    <h3 class="card-title">{{title}}</h3>
+                    <p class="card-text">{{description}}</p>
+                </div>
+                {{else}}
+                  {{#if (equal format 'video')}}
+                    <video width="250" height="250" controls="controls" type="video/mp4" preload="auto" playsinline>
+                      <source src="{{file}}" autostart="false">
+                      Your browser does not support the video tag.
+                    </video>
+                    {{/if}}
+                    {{#if (equal format 'pdf')}}
+                    <a class="linkwrap" href="{{file}}" target="_blank">
+                      <div class="blocker"></div>
+                      <iframe src="{{file}}" title="{{title}}"></iframe></a>
+                    {{/if}}
+                    {{#if (equal format 'image')}}
+                    <img class="resourceImg" src="{{file}}" alt="Card image cap">
+                    {{/if}}
+                <div class="visually-hidden closeEnlarge">CLOSE</div>
+                <div class="card-body">
+                    <h3 class="card-title">{{title}}</h3>
+                    <p class="card-text">{{description}}</p>
+                </div>
+                {{/if}}
+
+            </div>
+          </div>
+        {{/if}}
+        {{/each}}
+
+        </div>
+    </div>
+    </section>
+
+    {{else}}
+
+
+    <section id="blur-effect">
+        <div id="resources-header">
+            <h1 class="resources-title">RESOURCES</h1>
+            <div class="tab-container">
+                <ul class="resource-tab">
+                <li class="tab activeTab" data-tab-target="#advice-videos">ADVICE VIDEOS</li>
+                <li class="tab" data-tab-target="#college-placement">COLLEGE PLACEMENTS TIPS</li>
+                <li class="tab" data-tab-target="#health-and-wellness">HEALTH AND WELLNESS</li>
+                <li class="tab" data-tab-target="#tactical-development">TACTICAL DEVELOPMENT / <br>VISUAL LEARNING TOOLS</li>
+                </ul>
+            </div>
+        </div>
+    <div class="protectedSection">
+        <div id="advice-videos" class="content activeTab" data-tab-content>
+          <h2 class="protect-blurb">Placeholder info Advice Videos</h2>
+          <video class="video-example" autoplay="autoplay" loop="true" muted>
+            <source src="./uploads/video-example.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div id="college-placement" class="content" data-tab-content>
+          <h2 class="protect-blurb">Placeholder info College Tips</h2>
+            <div class="example-img-container">
+              <img src="./uploads/college-tips-example1.png" class="exampleImg fanImg1" alt="example image"/>
+              <img src="./uploads/college-tips-example2.png" class="exampleImg fanImg2" alt="example image"/>
+              <img src="./uploads/college-tips-example3.png" class="exampleImg fanImg3" alt="example image"/>
+              <img src="./uploads/college-tips-example4.png" class="exampleImg fanImg4" alt="example image"/>
+            </div>
+            <div class="login-btn-container">
+              <a href="/login" class="protect-btn">Login to View More</a>
+            </div>
+        </div>
+
+        <div id="health-and-wellness" class="content" data-tab-content>
+          <h2 class="protect-blurb">Placeholder info Health and Wellness</h2>
+          <div class="example-img-container">
+              <img src="./uploads/health-example1.png" class="exampleImg fanImg1" alt="example image"/>
+              <img src="./uploads/health-example2.png" class="exampleImg fanImg2" alt="example image"/>
+              <img src="./uploads/health-example3.png" class="exampleImg fanImg3" alt="example image"/>
+              <img src="./uploads/health-example4.png" class="exampleImg fanImg4" alt="example image"/>
+            </div>
+          <div class="login-btn-container">
+            <a href="/login" class="protect-btn">Login to View More</a>
+          </div>
+        </div>
+
+        <div id="tactical-development" class="content" data-tab-content>
+          <h2 class="protect-blurb">Placeholder info Tactical Development and Visual Learning</h2>
+          <div class="example-img-container">
+              <img src="./uploads/tact-dev-example1.png" class="exampleImg appearImg1" alt="example image"/>
+              <img src="./uploads/tact-dev-example2.png" class="exampleImg appearImg2" alt="example image"/>
+              <img src="./uploads/tact-dev-example3.png" class="exampleImg appearImg3" alt="example image"/>
+              <img src="./uploads/tact-dev-example4.png" class="exampleImg appearImg4" alt="example image"/>
+            </div>
+          <div class="login-btn-container">
+            <a href="/login" class="protect-btn">Login to View More</a>
+          </div>
+        </div>
+    </div>
+    </section>
+{{/if}}
+
+<script>
+
+    // Adding jQuery
+
+const head = document.getElementsByTagName('head')[0];
+const script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = "https://code.jquery.com/jquery-2.2.1.min.js";
+
+
+script.onreadystatechange = handler;
+script.onload = handler;
+
+head.appendChild(script);
+
+function handler(){
+   console.log('jquery added :)');
+}
+
+//resources tab styling
+
+const tabs = document.querySelectorAll('[data-tab-target]')
+const tabContent = document.querySelectorAll('[data-tab-content]')
+const advice = document.querySelectorAll('#advice-videos')
+
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = document.querySelector(tab.dataset.tabTarget)
+
+    tabContent.forEach(tabContent => {
+      tabContent.classList.remove('activeTab')
+    })
+
+    tabs.forEach(tab => {
+        tab.classList.remove('activeTab')
+      })
+
+    tab.classList.add('activeTab')
+    target.classList.add('activeTab')
+
+
+  })
+})
+
+//image enlarging
+
+const targetImg = document.getElementsByClassName('resourceImg')
+const closeImg = document.getElementsByClassName('closeEnlarge')
+
+
+  for (const img of targetImg) {
+    img.addEventListener('click', () => {
+    img.classList.add('activeView')
+      for(const closeEnlarge of closeImg) {
+        closeEnlarge.classList.add('activeView')
+      }
+      window.scrollTo(0, 0)
+  })
+}
+
+for(const closeEnlarge of closeImg) {
+  closeEnlarge.addEventListener('click', () => {
+    closeEnlarge.classList.remove('activeView')
+    for (const img of targetImg) {
+      img.classList.remove('activeView')
+    }
+  })
+}
+
+</script>
+
+

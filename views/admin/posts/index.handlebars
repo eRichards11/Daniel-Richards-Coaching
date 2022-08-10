@@ -1,0 +1,338 @@
+{{#if (equal user._id '62e2cf79cf3ea96185dc9bb4')}}
+
+
+<style>
+
+    .title {
+        text-align: center;
+        font-size: 2rem;
+        background-color: #ccc;
+        padding: .5em auto;
+        margin: .1em auto;
+    }
+      .tab-container {
+    list-style: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .resource-tab {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    letter-spacing: 1px;;
+    font-size: .8em;
+    margin: 0 auto;
+  }
+
+  .activeTab[data-tab-content] {
+    display: block;
+    margin: 2em auto;
+    text-align: center;
+  }
+
+  .activeTab[data-tab-target] {
+    background-color: navy;
+    color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;;
+  }
+
+    .tab {
+    padding: 0 8px;
+  }
+
+  .tab:hover {
+    background-color: #eee;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  [data-tab-content] {
+    display: none;
+  }
+
+</style>
+
+<div class="container">
+    <div class="alert alert-secondary text-center">
+        <h1>All Post</h1>
+    </div>
+    <div class="tab-container">
+        <ul class="resource-tab">
+            <li class="tab activeTab" data-tab-target="#advice-videos">ADVICE VIDEOS</li>
+            <li class="tab" data-tab-target="#college-placement">COLLEGE PLACEMENTS TIPS</li>
+            <li class="tab" data-tab-target="#health-and-wellness">HEALTH AND WELLNESS</li>
+            <li class="tab" data-tab-target="#tactical-development">TACTICAL DEVELOPMENT</li>
+            <li class="tab" data-tab-target="#exercises">EXERCISES</li>
+            <li class="tab" data-tab-target="#sessions">SESSIONS</li>
+            <li class="tab" data-tab-target="#stats">STAT DATA</li>
+        </ul>
+    </div>
+
+        <div id="advice-videos" class="content activeTab" data-tab-content>
+            <table class="table table-bordered">
+                <thead class="bg-dark">
+                    <tr class="text-white text-center">
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    {{#each posts}}
+                    {{#if (equal category.title 'advice-videos')}}
+                    <tr>
+                        <td>{{title}}</td>
+                        <td>{{description}}</td>
+                        <td>{{category.title}}</td>
+                        <td class="d-flex">
+                            <a href="./posts/edit/{{_id}}" class="btn btn-sm btn-warning mr-2">Edit Post</a>
+
+                   <form action="/admin/posts/delete/{{_id}}?newMethod=DELETE" method="post">
+                        <button class="btn btn-sm btn-danger" type="submit">Delete Post</button>
+                    </form>
+
+                        </td>
+                    </tr>
+                    {{/if}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+        <div id="college-placement" class="content" data-tab-content>
+            <table class="table table-bordered">
+                <thead class="bg-dark">
+                    <tr class="text-white text-center">
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    {{#each posts}}
+                    {{#if (equal category.title 'college-placement')}}
+                    <tr>
+                        <td>{{title}}</td>
+                        <td>{{description}}</td>
+                        <td>{{category.title}}</td>
+                        <td class="d-flex">
+                            <a href="./posts/edit/{{_id}}" class="btn btn-sm btn-warning mr-2">Edit Post</a>
+
+                   <form action="/admin/posts/delete/{{_id}}?newMethod=DELETE" method="post">
+                        <button class="btn btn-sm btn-danger" type="submit">Delete Post</button>
+                    </form>
+
+                        </td>
+                    </tr>
+                    {{/if}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+        <div id="health-and-wellness" class="content" data-tab-content>
+          <table class="table table-bordered">
+                <thead class="bg-dark">
+                    <tr class="text-white text-center">
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    {{#each posts}}
+                    {{#if (equal category.title 'health-and-wellness')}}
+                    <tr>
+                        <td>{{title}}</td>
+                        <td>{{description}}</td>
+                        <td>{{category.title}}</td>
+                        <td class="d-flex">
+                            <a href="./posts/edit/{{_id}}" class="btn btn-sm btn-warning mr-2">Edit Post</a>
+
+                   <form action="/admin/posts/delete/{{_id}}?newMethod=DELETE" method="post">
+                        <button class="btn btn-sm btn-danger" type="submit">Delete Post</button>
+                    </form>
+
+                        </td>
+                    </tr>
+                    {{/if}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+        <div id="tactical-development" class="content" data-tab-content>
+            <table class="table table-bordered">
+                <thead class="bg-dark">
+                    <tr class="text-white text-center">
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    {{#each posts}}
+                    {{#if (equal category.title 'tactical-development')}}
+                    <tr>
+                        <td>{{title}}</td>
+                        <td>{{description}}</td>
+                        <td>{{category.title}}</td>
+                        <td class="d-flex">
+                            <a href="./posts/edit/{{_id}}" class="btn btn-sm btn-warning mr-2">Edit Post</a>
+
+                   <form action="/admin/posts/delete/{{_id}}?newMethod=DELETE" method="post">
+                        <button class="btn btn-sm btn-danger" type="submit">Delete Post</button>
+                    </form>
+
+                        </td>
+                    </tr>
+                    {{/if}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+        <div id="exercises" class="content" data-tab-content>
+            <table class="table table-bordered">
+                <thead class="bg-dark">
+                    <tr class="text-white text-center">
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    {{#each posts}}
+                    {{#if (equal category.title 'Exercises')}}
+                    <tr>
+                        <td>{{title}}</td>
+                        <td>{{description}}</td>
+                        <td>{{category.title}}</td>
+                        <td class="d-flex">
+                            <a href="./posts/edit/{{_id}}" class="btn btn-sm btn-warning mr-2">Edit Post</a>
+
+                   <form action="/admin/posts/delete/{{_id}}?newMethod=DELETE" method="post">
+                        <button class="btn btn-sm btn-danger" type="submit">Delete Post</button>
+                    </form>
+
+                        </td>
+                    </tr>
+                    {{/if}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+        <div id="sessions" class="content" data-tab-content>
+            <table class="table table-bordered">
+                <thead class="bg-dark">
+                    <tr class="text-white text-center">
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    {{#each posts}}
+                    {{#if (equal category.title 'Sessions')}}
+                    <tr>
+                        <td>{{title}}</td>
+                        <td>{{description}}</td>
+                        <td>{{category.title}}</td>
+                        <td class="d-flex">
+                            <a href="./posts/edit/{{_id}}" class="btn btn-sm btn-warning mr-2">Edit Post</a>
+
+                   <form action="/admin/posts/delete/{{_id}}?newMethod=DELETE" method="post">
+                        <button class="btn btn-sm btn-danger" type="submit">Delete Post</button>
+                    </form>
+
+                        </td>
+                    </tr>
+                    {{/if}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+        <div id="stats" class="content" data-tab-content>
+            <table class="table table-bordered">
+                <thead class="bg-dark">
+                    <tr class="text-white text-center">
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    {{#each posts}}
+                    {{#if (equal category.title 'stats')}}
+                    <tr>
+                        <td>{{title}}</td>
+                        <td>{{description}}</td>
+                        <td>{{category.title}}</td>
+                        <td class="d-flex">
+                            <a href="./posts/edit/{{_id}}" class="btn btn-sm btn-warning mr-2">Edit Post</a>
+
+                   <form action="/admin/posts/delete/{{_id}}?newMethod=DELETE" method="post">
+                        <button class="btn btn-sm btn-danger" type="submit">Delete Post</button>
+                    </form>
+
+                        </td>
+                    </tr>
+                    {{/if}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+</div>
+
+<script>
+    // Adding jQuery
+
+const head = document.getElementsByTagName('head')[0];
+const script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = "https://code.jquery.com/jquery-2.2.1.min.js";
+
+script.onreadystatechange = handler;
+script.onload = handler;
+
+head.appendChild(script);
+
+function handler(){
+   console.log('jquery added :)');
+}
+
+//resources tab styling
+
+const tabs = document.querySelectorAll('[data-tab-target]')
+const tabContent = document.querySelectorAll('[data-tab-content]')
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = document.querySelector(tab.dataset.tabTarget)
+    tabContent.forEach(tabContent => {
+      tabContent.classList.remove('activeTab')
+    })
+
+    tabs.forEach(tab => {
+        tab.classList.remove('activeTab')
+      })
+
+    tab.classList.add('activeTab')
+    target.classList.add('activeTab')
+  })
+})
+</script>
+
+{{/if}}
