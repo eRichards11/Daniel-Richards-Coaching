@@ -1,5 +1,3 @@
-
-
 <section id="blur-effect">
     <div id="resources-header">
         <h1 class="resources-title">EXERCISES</h1>
@@ -152,10 +150,10 @@
   <input style="background-color: lightgrey;" id="searchbar-disable" class="searchbar-disable" disabled="true" type="text" name="search" placeholder="Search Sessions..">
    <h2 class="protect-blurb">Placeholder info Sessions</h2>
       <div class="example-img-container">
-        <img src="" class="exampleImg appearImg1" alt="example image"/>
-        <img src="" class="exampleImg appearImg2" alt="example image"/>
-        <img src="" class="exampleImg appearImg3" alt="example image"/>
-        <img src="" class="exampleImg appearImg4" alt="example image"/>
+        <img src="./uploads/session-example1.png" class="exampleImg appearImg1" alt="example image"/>
+        <img src="./uploads/session-example2.png" class="exampleImg appearImg2" alt="example image"/>
+        <img src="./uploads/session-example3.png" class="exampleImg appearImg3" alt="example image"/>
+        <img src="./uploads/session-example4.png" class="exampleImg appearImg4" alt="example image"/>
       </div>
       <div class="login-btn-container">
         <a href="/login" class="protect-btn">Login to View More</a>
@@ -165,96 +163,3 @@
 </section>
 
     {{/if}}
-
-<script>
-// Adding jQuery
-
-const head = document.getElementsByTagName('head')[0];
-const script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = "https://code.jquery.com/jquery-2.2.1.min.js";
-
-script.onreadystatechange = handler;
-script.onload = handler;
-
-head.appendChild(script);
-
-function handler(){
-   console.log('jquery added :)');
-}
-
-//tab styling
-
-const tabs = document.querySelectorAll('[data-tab-target]')
-const tabContent = document.querySelectorAll('[data-tab-content]')
-
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    const target = document.querySelector(tab.dataset.tabTarget)
-    tabContent.forEach(tabContent => {
-      tabContent.classList.remove('activeTab')
-    })
-
-    tabs.forEach(tab => {
-        tab.classList.remove('activeTab')
-      })
-
-    tab.classList.add('activeTab')
-    target.classList.add('activeTab')
-  })
-})
-
-//exercise search bar function
-
-function searchPlays() {
-    let input = document.getElementById('searchbar').value
-    input = input.toLowerCase();
-    let x = document.getElementsByClassName('drills')
-
-    for (let i = 0; i < x.length; i++) {
-        let tag = x[i].getAttribute('data-filter')
-        if (!tag.toLowerCase().includes(input)) {
-            x[i].style.display="none";
-        }
-        else {
-            x[i].style.display="block";                 
-        } 
-    }
-}
-
-//filter box
-
-function openFilter() {
-  document.getElementById('filter-input-wrapper').style.display = 'block'
-}
-
-
-let addFilter = document.getElementById('addFilter')
-
-addFilter.addEventListener('click', (e) => {
-let x = document.getElementsByClassName('drills')
-let checkboxes = document.querySelectorAll('input[name="filter"]:checked')
-let values = []
-    checkboxes.forEach((checkbox) => {
-        values.push(checkbox.value);
-    })
-  for (let element of x) {
-    const filter = element.getAttribute('data-filter');
-    element.style.display = values.includes(filter)? 'block' : 'none'
-  }
-
-document.getElementById('filter-input-wrapper').style.display = 'none'
-})
-
-
-let removeFilter = document.getElementById('removeFilter')
-
-removeFilter.addEventListener('click', (e) => {
-  let x = document.getElementsByClassName('drills')
-    for (let element of x) {
-      element.style.display = 'block'
-    }
-  document.getElementById('filter-input-wrapper').style.display = 'none'
-})
-
-</script>

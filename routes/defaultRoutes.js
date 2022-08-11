@@ -83,5 +83,4 @@ router.route('/thanks')
 router.route('/stats')
     .get(defaultController.stats)
 
-
 module.exports = router
